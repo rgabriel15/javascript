@@ -19,9 +19,8 @@
 				}
 			}
 
-		if (typeof onSuccessFunction != 'function' && onSuccessFunction != null) {
+		if (typeof onSuccessFunction != 'function' && onSuccessFunction != null)
             throw 'ArgumentException: onSuccessFunction.';
-		}
 
 		if (typeof onErrorFunction != 'function')
 			if (onErrorFunction != null) {
