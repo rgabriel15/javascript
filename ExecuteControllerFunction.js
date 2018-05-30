@@ -15,7 +15,7 @@
 					&& inputDataType != 'json'
 					&& inputDataType != 'script'
 					&& inputDataType != 'html') {
-					throw 'ArgumentException: inputDataType.' + inputDataTypeErrorMessage';
+					throw 'ArgumentException: inputDataType.' + inputDataTypeErrorMessage;
 				}
 			}
 
