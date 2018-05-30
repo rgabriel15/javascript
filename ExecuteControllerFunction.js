@@ -8,7 +8,7 @@
 		var inputDataTypeErrorMessage = ' inputDataType must be \'xml\', \'json\', \'script\', \'html\' or null.'
 		if (inputDataType != null) {
 			if (typeof inputDataType != 'string') {
-				throw 'ArgumentException: inputDataType.' + inputDataTypeErrorMessage';
+				throw 'ArgumentException: inputDataType.' + inputDataTypeErrorMessage;
 			} else {
 				inputDataType = inputDataType.toLower();
 				if (inputDataType != 'xml'
