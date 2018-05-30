@@ -6,25 +6,27 @@
             throw 'ArgumentException: functionName.';
 
 		var inputDataTypeErrorMessage = ' inputDataType must be \'xml\', \'json\', \'script\', \'html\' or null.'
-		if (inputDataType != null)
+		if (inputDataType != null) {
 			if (typeof inputDataType != 'string')
 				throw 'ArgumentException: inputDataType.' + inputDataTypeErrorMessage';
-			else {
+			} else {
 				inputDataType = inputDataType.toLower();
 				if (inputDataType != 'xml'
 					&& inputDataType != 'json'
 					&& inputDataType != 'script'
-					&& inputDataType != 'html')
-				throw 'ArgumentException: inputDataType.' + inputDataTypeErrorMessage';
+					&& inputDataType != 'html') {
+					throw 'ArgumentException: inputDataType.' + inputDataTypeErrorMessage';
+				}
 			}
 
-		if (typeof onSuccessFunction != 'function' && onSuccessFunction != null)
+		if (typeof onSuccessFunction != 'function' && onSuccessFunction != null) {
             throw 'ArgumentException: onSuccessFunction.';
+		}
 
 		if (typeof onErrorFunction != 'function')
-			if (onErrorFunction != null)
+			if (onErrorFunction != null) {
 				throw 'ArgumentException: onErrorFunction.';
-			else {
+			} else {
 				onErrorFunction = function (xhr, ajaxOptions, thrownError) {
 					var msg = JSON.parse(xhr.responseText);
 					alert(msg.ExceptionMessage);
@@ -44,9 +46,8 @@
             processData: false,
             progress: function () {
                 var ajaxSettingsXhr = $.ajaxSettings.xhr();
-                if (ajaxSettingsXhr.upload) {
+                if (ajaxSettingsXhr.upload) 
                     ajaxSettingsXhr.upload.addEventListener('progress', function () { }, false);
-                }
                 return ajaxSettingsXhr;
             }
 			success: onSuccessFunction,
