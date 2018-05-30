@@ -1,9 +1,9 @@
 <script type="text/javascript">
-	function ExecuteControllerFunction(controllerName, functionName, inputData, inputDataType, onSuccessFunction, onErrorFunction, isPostFunction) {
-		if (typeof controllerName != 'string')
-            throw 'ArgumentException: controllerName.';
-		if (typeof functionName != 'string')
-            throw 'ArgumentException: functionName.';
+	function ExecuteControllerFunction(controllerClassName, controllerFunctionName, inputData, inputDataType, onSuccessFunction, onErrorFunction, isPostFunction) {
+		if (typeof controllerClassName != 'string')
+            throw 'ArgumentException: controllerClassName.';
+		if (typeof controllerFunctionName != 'string')
+            throw 'ArgumentException: controllerFunctionName.';
 
 		var inputDataTypeErrorMessage = ' inputDataType must be \'xml\', \'json\', \'script\', \'html\' or null.'
 		if (inputDataType != null) {
@@ -36,7 +36,7 @@
 		var functionType = isPostFunction ? 'POST' : 'GET';
 		
 		$.ajax({
-			url: '/' + controllerName + '/' + controllerFunctionName,
+			url: '/' + controllerClassName + '/' + controllercontrollerFunctionName,
             type: functionType,
             data: inputData,
 			dataType: inputDataType,
