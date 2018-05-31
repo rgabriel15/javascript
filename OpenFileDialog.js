@@ -29,7 +29,7 @@ https://gist.github.com/adamfisher/16fe8c619ea389944d0f
 		
 		var file = sender.files[0];
 		if (typeof file != 'object' || file == null)
-            throw 'ArgumentException: sender.files.';
+            throw 'ArgumentException: sender.files[0].';
 	
 		var formData = new FormData();
         formData.append('file', file);
