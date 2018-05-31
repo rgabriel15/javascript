@@ -6,7 +6,7 @@
             throw 'ArgumentException: controllerFunctionName.';
 
 		var inputDataTypeErrorMessage = ' inputDataType must be \'xml\', \'json\', \'script\', \'html\' or null.'
-		if (inputDataType != null) {
+		if (inputDataType != null)
 			if (typeof inputDataType != 'string') {
 				throw 'ArgumentException: inputDataType.' + inputDataTypeErrorMessage;
 			} else {
@@ -45,7 +45,7 @@
 		var functionType = isPostFunction ? 'POST' : 'GET';
 		
 		$.ajax({
-			url: '/' + controllerClassName + '/' + controllercontrollerFunctionName,
+			url: '/' + controllerClassName + '/' + controllerFunctionName,
             type: functionType,
             data: inputData,
 			dataType: inputDataType,
