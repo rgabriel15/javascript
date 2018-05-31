@@ -32,7 +32,7 @@
 				}
 			}
 		
-		isPostFunction = typeof isPostFunction == 'boolean' ? isPostFunction : false;
+		isPostFunction = typeof isPostFunction == 'boolean' ? isPostFunction : true;
 		var functionType = isPostFunction ? 'POST' : 'GET';
 		
 		$.ajax({
