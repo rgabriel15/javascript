@@ -3,8 +3,14 @@
 	   onchange="Input_OnChange(this)"
 	   type="file"
 	   style="display: none;">
-<!-- for excel file filter, incluide
+<!--
+File filter. For multiple file extensions, separate with comma.
+
+Ex. CSV and EXCEL:
 accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
+
+MIME Extension Mappings
+https://gist.github.com/adamfisher/16fe8c619ea389944d0f
 -->
                         
 <button type="button" onclick="Button_OnClick()"/>
