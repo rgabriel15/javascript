@@ -22,6 +22,15 @@
 		if (typeof onSuccessFunction != 'function' && onSuccessFunction != null)
             throw 'ArgumentException: onSuccessFunction.';
 
+		if (typeof onSuccessFunction != 'function')
+			if (onSuccessFunction != null) {
+				throw 'ArgumentException: onSuccessFunction.';
+			} else {
+				onSuccessFunction = function (data) {
+					alert(data);
+				}
+			}			
+			
 		if (typeof onErrorFunction != 'function')
 			if (onErrorFunction != null) {
 				throw 'ArgumentException: onErrorFunction.';
