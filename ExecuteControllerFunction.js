@@ -48,7 +48,7 @@
                 if (ajaxSettingsXhr.upload) 
                     ajaxSettingsXhr.upload.addEventListener('progress', function () { }, false);
                 return ajaxSettingsXhr;
-            }
+            },
 			success: onSuccessFunction,
 			error: onErrorFunction
         });
