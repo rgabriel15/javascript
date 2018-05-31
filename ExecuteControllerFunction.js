@@ -1,8 +1,8 @@
 <script type="text/javascript">
 	function ExecuteControllerFunction(controllerClassName, controllerFunctionName, inputData, inputDataType, onSuccessFunction, onErrorFunction, isPostFunction) {
-		if (typeof controllerClassName != 'string')
+		if (typeof controllerClassName != 'string' || controllerClassName.length < 1)
             throw 'ArgumentException: controllerClassName.';
-		if (typeof controllerFunctionName != 'string')
+		if (typeof controllerFunctionName != 'string' || controllerFunctionName.length < 1)
             throw 'ArgumentException: controllerFunctionName.';
 
 		var inputDataTypeErrorMessage = ' inputDataType must be \'xml\', \'json\', \'script\', \'html\' or null.'
