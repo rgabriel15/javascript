@@ -35,7 +35,7 @@ https://gist.github.com/adamfisher/16fe8c619ea389944d0f
         var formData = new FormData();
         formData.append('file', file);
 	
-	var onSuccessFunction(){
+	var onSuccessFunction(data){
 		//TODO
 	};
 		
