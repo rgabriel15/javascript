@@ -5,7 +5,6 @@
 	   style="display: none;">
 <!--
 File filter. For multiple file extensions, separate with comma.
-
 Ex. CSV and EXCEL:
 accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
 
@@ -36,10 +35,10 @@ https://gist.github.com/adamfisher/16fe8c619ea389944d0f
         var formData = new FormData();
         formData.append('file', file);
 	
-	    var onSuccessFunction(){
-			//TODO
-		};
+	var onSuccessFunction(){
+		//TODO
+	};
 		
-		ExecuteControllerFunction('ControllerClassName', 'ControllerFunctionName', formData, null, onSuccessFunction);
+	ExecuteControllerFunction('ControllerClassName', 'ControllerFunctionName', formData, null, onSuccessFunction);
     }
 </script>
