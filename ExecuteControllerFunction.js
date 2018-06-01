@@ -10,7 +10,7 @@
 			if (typeof inputDataType != 'string') {
 				throw 'ArgumentException: inputDataType.' + inputDataTypeErrorMessage;
 			} else {
-				inputDataType = inputDataType.toLower();
+				inputDataType = inputDataType.toLowerCase();
 				if (inputDataType != 'xml'
 					&& inputDataType != 'json'
 					&& inputDataType != 'script'
@@ -18,9 +18,6 @@
 					throw 'ArgumentException: inputDataType.' + inputDataTypeErrorMessage;
 				}
 			}
-
-		if (typeof onSuccessFunction != 'function' && onSuccessFunction != null)
-            throw 'ArgumentException: onSuccessFunction.';
 
 		if (typeof onSuccessFunction != 'function')
 			if (onSuccessFunction != null) {
