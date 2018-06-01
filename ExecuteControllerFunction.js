@@ -38,25 +38,29 @@
 				}
 			}
 		
-		isPostFunction = typeof isPostFunction == "boolean" ? isPostFunction : true;
-		var functionType = isPostFunction ? "POST" : "GET";
-		
-		$.ajax({
-			url: "/" + controllerClassName + "/" + controllerFunctionName,
+        isPostFunction = typeof isPostFunction == "boolean" ? isPostFunction : true;
+        var functionType = isPostFunction ? "POST" : "GET";
+        var ajaxSettings = {
+            url: "/" + controllerClassName + "/" + controllerFunctionName,
             type: functionType,
             data: inputData,
-			dataType: inputDataType,
-            cache: false,
-            contentType: false,
-            processData: false,
+            dataType: inputDataType,
             progress: function () {
                 var ajaxSettingsXhr = $.ajaxSettings.xhr();
-                if (ajaxSettingsXhr.upload) 
+                if (ajaxSettingsXhr.upload)
                     ajaxSettingsXhr.upload.addEventListener("progress", function () { }, false);
                 return ajaxSettingsXhr;
             },
-			success: onSuccessFunction,
-			error: onErrorFunction
-        });
+            success: onSuccessFunction,
+            error: onErrorFunction
+        }
+
+        if (inputDataType == null) {
+            ajaxSettings.cache = false;
+            ajaxSettings.contentType = false;
+            ajaxSettings.processData = false;
+        }
+
+        $.ajax(ajaxSettings);
 	}
 </script>
