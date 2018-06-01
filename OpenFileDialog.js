@@ -21,24 +21,24 @@ https://gist.github.com/adamfisher/16fe8c619ea389944d0f
     }
 
     function Input_OnChange(sender) {
-        if (typeof sender != 'object' || sender == null)
-            throw 'ArgumentException: sender.';
-        if (typeof sender.files != 'object' || sender.files == null)
-            throw 'ArgumentException: sender.files.';
-        if (typeof controllerFunctionName != 'string' || controllerFunctionName.length < 1)
-            throw 'ArgumentException: controllerFunctionName.';
+        if (typeof sender != "object" || sender == null)
+            throw "ArgumentException: sender.";
+        if (typeof sender.files != "object" || sender.files == null)
+            throw "ArgumentException: sender.files.";
+        if (typeof controllerFunctionName != "string" || controllerFunctionName.length < 1)
+            throw "ArgumentException: controllerFunctionName.";
 
         var file = sender.files[0];
-        if (typeof file != 'object' || file == null)
-            throw 'ArgumentException: sender.files[0].';
+        if (typeof file != "object" || file == null)
+            throw "ArgumentException: sender.files[0].";
 
         var formData = new FormData();
-        formData.append('file', file);
+        formData.append("file", file);
 	
-	var onSuccessFunction(data){
-		//TODO
-	};
-		
-	ExecuteControllerFunction('ControllerClassName', 'ControllerFunctionName', formData, null, onSuccessFunction);
+		var onSuccessFunction(data){
+			//TODO
+		};
+			
+		ExecuteControllerFunction("ControllerClassName", "ControllerFunctionName", formData, null, onSuccessFunction);
     }
 </script>
