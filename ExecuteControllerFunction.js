@@ -5,8 +5,8 @@
 		if (typeof controllerFunctionName != 'string' || controllerFunctionName.length < 1)
             throw 'ArgumentException: controllerFunctionName.';
 
-		var inputDataTypeErrorMessage = ' inputDataType must be \'xml\', \'json\', \'script\', \'html\' or null.'
-		if (inputDataType != null)
+		if (inputDataType != null) {
+			var inputDataTypeErrorMessage = ' inputDataType must be \'xml\', \'json\', \'script\', \'html\' or null.'
 			if (typeof inputDataType != 'string') {
 				throw 'ArgumentException: inputDataType.' + inputDataTypeErrorMessage;
 			} else {
@@ -18,6 +18,7 @@
 					throw 'ArgumentException: inputDataType.' + inputDataTypeErrorMessage;
 				}
 			}
+		}
 
 		if (typeof onSuccessFunction != 'function')
 			if (onSuccessFunction != null) {
