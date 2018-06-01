@@ -34,8 +34,7 @@
 				throw 'ArgumentException: onErrorFunction.';
 			} else {
 				onErrorFunction = function (xhr, ajaxOptions, thrownError) {
-					var msg = JSON.parse(xhr.responseText);
-					alert(msg.ExceptionMessage);
+					alert(thrownError.toString());
 				}
 			}
 		
