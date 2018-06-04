@@ -39,7 +39,7 @@
             }
 
         isPostFunction = typeof isPostFunction == "boolean" ? isPostFunction : true;
-        isFile = typeof isPostFunction == "boolean" ? isFile : false;
+        isFile = typeof isFile == "boolean" ? isFile : false;
 
         var functionType = isPostFunction ? "POST" : "GET";
         var ajaxSettings = {
