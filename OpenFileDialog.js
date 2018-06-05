@@ -39,6 +39,6 @@ https://gist.github.com/adamfisher/16fe8c619ea389944d0f
 			//TODO
 		};
 			
-		ExecuteControllerFunction("ControllerClassName", "ControllerFunctionName", formData, null, onSuccessFunction);
+		ExecuteControllerFunction("ControllerClassName", "ControllerFunctionName", formData, null, onSuccessFunction, null, null, true);
     }
 </script>
