@@ -81,7 +81,6 @@ function InputAnexarResultadoPedidoHabilitacao_OnChange(sender) {
 			$('#ProgressSuccess_0').css('display', 'block');
 			$('.anxs0').css('display', 'block').attr('title', data.Data.NomeArquivo).html(fileName);
 			$('.anxd0').css('display', 'none');
-			$('#progSuccess_0').css('width', '100%');
 		}
 
 		$("#resultadoPedidoHabilitacao").val(JSON.stringify(data.Data));
