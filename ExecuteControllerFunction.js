@@ -1,5 +1,5 @@
 <script type="text/javascript">
-    function ExecuteControllerFunction(controllerClassName, controllerFunctionName, inputData, inputDataType, onSuccessFunction, onErrorFunction, isPostFunction, isFile) {
+    function ExecuteControllerFunction(controllerClassName, controllerFunctionName, inputData, inputDataType, onSuccessFunction, onErrorFunction, xhrFunction, isPostFunction, isFile) {
         if (typeof controllerClassName != "string" || controllerClassName.length < 1)
             throw "ArgumentException: controllerClassName.";
         if (typeof controllerFunctionName != "string" || controllerFunctionName.length < 1)
@@ -47,16 +47,18 @@
             type: functionType,
             data: inputData,
             dataType: inputDataType,
-            progress: function () {
-                var ajaxSettingsXhr = $.ajaxSettings.xhr();
-                if (ajaxSettingsXhr.upload)
-                    ajaxSettingsXhr.upload.addEventListener("progress", function () { }, false);
-                return ajaxSettingsXhr;
-            },
             success: onSuccessFunction,
             error: onErrorFunction
         }
 
+		if (xhrFunction != null) {
+			if (typeof xhrFunction != "function") {
+				throw "ArgumentException: xhrFunction.";
+			} else {
+				ajaxSettings.xhr = xhrFunction;
+			}
+		}		
+		
         if (isFile)
         {
             ajaxSettings.cache = false;
